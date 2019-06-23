@@ -297,6 +297,7 @@ function longer(arr1, arr2){
 */
 
 //Code Here
+//SOLUTION 1
 // function both(arr1, arr2){
 //   let newArray = [];
 //   for(let i = 0; i < arr1.length; i++){
@@ -309,20 +310,61 @@ function longer(arr1, arr2){
 //   return newArray;
 // }
 
-function both(arr1, arr2){
-  let newArray = [];
-  for(let i = 0; i < arr1.length; i++){
-    if(arr2.includes(arr1[i])){
-      newArray.push(arr1[i]);
-    }    
-  }
-  return newArray;
-}
+
+//SOLUTION 2
+// function both(arr1, arr2){
+//   let newArray = [];
+//   for(let i = 0; i < arr1.length; i++){
+//     if(arr2.includes(arr1[i])){
+//       newArray.push(arr1[i]);
+//     }    
+//   }
+//   return newArray;
+// }
 
 
 
 
 
+//SOLUTION  3
+// function both(arr1, arr2){
+//     let newArray = arr1.filter((element)  => {
+//       for(let i = 0; i < arr2.length; i ++){
+//         // return element === arr2[i];
+//         if(element === arr2[i]){
+//           return true;
+//         }      
+//       }
+//       return false 
+//     });
+//     return newArray;
+// }
+
+
+//SOLUTION 4
+function both(arr1, arr2){ 
+  return arr1.filter(e => { return arr2.includes(e)});
+ }
+
+//  const both = (arr1, arr2) => arr1.filter(e => arr2.includes(e));
+
+//  Solution 5 (needs work)
+//  function both(arr1, arr2){
+//   let newArray  = []
+//   arr1.map(e =>{ 
+//      if(arr2.indexOf(e) > -1){
+//          newArray.push(e);
+//     }
+//   });
+//   return newArray;
+//  }
+
+ // Solution 6 (making solution 5 consise(Still needs work))
+
+//  const both = (a1, a2) => { let na = []; return  a1.map(a2.indexOf(e) > -1 ? na.push(e): na)}
+
+
+console.log(both);
 ////////// PROBLEM 12 //////////
 
 // Do not edit the code below.
