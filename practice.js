@@ -125,8 +125,13 @@ var numbersArray = [1,2,34,54,55,34,32,11,19,17,54,66,13];
 */
 
 //Code Here
-
-
+function divider(numbersArray){
+  let newArray = [[],[]];
+  for(let i = 0; i < numbersArray.length ; i++){
+    numbersArray[i] % 2 === 0? newArray[0].push(numbersArray[i]) : newArray[1].push(numbersArray[i])
+  }
+  return newArray;
+}
 
 ////////// PROBLEM 7 //////////
 
@@ -135,6 +140,7 @@ var getRandomArbitrary = function() {
   return Math.floor(Math.random() * 30);
 };
 // Do not edit the code above.
+
 
 /* 
   var numbers = [0,3,4,5,6,7,9,14,17,24,25,26,29,30];
@@ -147,7 +153,15 @@ var getRandomArbitrary = function() {
 */
 
 //Code Here
-
+function finder(arry){
+  let randomNumber = getRandomArbitrary();
+  for(let i = 0; i < arry.length; i++){
+    if(arry[i] === randomNumber){
+      return true;
+    }
+  }
+  return false;
+}
 
 
 ////////// PROBLEM 8 //////////
@@ -177,7 +191,32 @@ var myGroceryList = ['chips', 'pizza', 'hotpockets', 'MtnDew', 'corndogs'];
 
 //Code Here
 
+function removeItem(myGroceryList, removeItem){
 
+if(!removeItem){
+  return myGroceryList = []; 
+}
+  
+for(let i = 0; i < myGroceryList.length; i++){
+  if(myGroceryList[i] === removeItem){
+    myGroceryList.splice(i,1);
+  }
+   
+  }
+  return myGroceryList;
+
+}
+
+
+function addItem(myGroceryList, addItem){
+  if(!addItem){
+    return myGroceryList = []; 
+  }
+    myGroceryList.push(addItem);
+  
+  return myGroceryList;
+
+}
 
 ////////// PROBLEM 9 //////////
 
@@ -186,7 +225,14 @@ var myGroceryList = ['chips', 'pizza', 'hotpockets', 'MtnDew', 'corndogs'];
 */
 
 //Code Here
+function maker (){
+  let arry = [];
+  for(let i = 1; i < 216; i++){
+    arry.push(i);
+  }
 
+  return arry;
+}
 
 
 ////////// PROBLEM 10 //////////
@@ -203,7 +249,13 @@ var numbers = [5, '9', 16, 19, '25', '34', 48];
   
 //Code Here
 
-
+function addTen(numbers){
+  for(let i = 0; i < numbers.length; i++){
+    numbers[i] = parseInt(numbers[i]) + 10;
+    
+  }
+  return numbers;
+}
 
 ////////// PROBLEM 11 //////////
 
@@ -225,9 +277,15 @@ for(var i = 0; i < num2; i++){
   Write a function called 'longer' that is given arr1 and arr2 as it's only arguments. 
   Return the longer of the two arrays.
 */
-
+console.log();
 //Code Here
-
+function longer(arr1, arr2){
+  if(arr1.length > arr2.length)  {
+    return arr1;
+  }else{
+    return arr2;
+  }
+}
 
 
 /*
@@ -239,6 +297,29 @@ for(var i = 0; i < num2; i++){
 */
 
 //Code Here
+// function both(arr1, arr2){
+//   let newArray = [];
+//   for(let i = 0; i < arr1.length; i++){
+//     for(let j = 0; j < arr2.length; j++){
+//       if(arr1[i] === arr2[j]){
+//         newArray.push(arr1[i]);
+//       }
+//     }
+//   }
+//   return newArray;
+// }
+
+function both(arr1, arr2){
+  let newArray = [];
+  for(let i = 0; i < arr1.length; i++){
+    if(arr2.includes(arr1[i])){
+      newArray.push(arr1[i]);
+    }    
+  }
+  return newArray;
+}
+
+
 
 
 
@@ -279,7 +360,8 @@ var colt = {
 */
 
 //Code Here
-
+devMountainEmployees.push(joe,cahlan,colt, ryan);
+console.log(devMountainEmployees.length);
 
 
 /*
@@ -288,7 +370,12 @@ var colt = {
 */
 
 //Code Here
-
+for(let i = devMountainEmployees.length -1; i >= 0; i--){
+  console.log(devMountainEmployees[i]);
+  if(devMountainEmployees[i].name === "Cahlan"){
+    devMountainEmployees.splice(i, 1);
+  }
+}
 
 
 ////////// PROBLEM 13 //////////
@@ -300,6 +387,7 @@ var colt = {
 */
 
 //Code Here
+let users = [];
 
 
 
@@ -318,9 +406,27 @@ var user1 = {
 };
 // Do not edit the code above.
 
+var user2 = {
+  name: 'Mark Punk',
+  email: 'mark.punk@devmounta.in',
+  password: 'hunter3',
+  username: 'ihazcode2'
+}
+var user3 = {
+  name: 'Mark Weever',
+  email: 'mark.weever@devmounta.in',
+  password: 'hunter4',
+  username: 'ihazcode3'
+}
+var user4 = {
+  name: 'Mark Tim',
+  email: 'mark.tim@devmounta.in',
+  password: 'hunter5',
+  username: 'ihazcode4'
+}
 //Code Here
 
-
+users.push(user1, user2, user3, user4);
 
 /*
   Now you have a very common data structure. 
@@ -333,7 +439,12 @@ var user1 = {
 */
 
 //Code Here
+for(let i = users.length -1; i >= 0; i--){
 
+  if(users[i].email === "mark.mciver@devmounta.in"){
+  users.splice(i, 1);
+} 
+}
 
 
 /*
